@@ -1,7 +1,8 @@
 import './style/style.css';
-import Login from './Login';
+import Home from './Home';
 import SplashPage from './Splash';
 import NotFound from './NotFound';
+import Player from './Player'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 function App() {
@@ -13,7 +14,10 @@ function App() {
                         <SplashPage />
                     </Route>
                     <Route exact path='/home'>
-                        <Login />
+                        <Home />
+                    </Route>
+                    <Route exact path='/player'>
+                        <Player />
                     </Route>
                     <Route component={NotFound}/>
                 </Switch>

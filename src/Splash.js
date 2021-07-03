@@ -1,6 +1,5 @@
 import './style/style.css';
 import { Link } from 'react-router-dom';
-import Logo from './logo.svg'
 
 function SplashPage() {
 
@@ -8,11 +7,13 @@ function SplashPage() {
         <div className="splash">
             <div className="splash__container">
                 <div className="splash__container__logo">
-                    <img src={Logo} alt="logo"></img>
+                    My streaming service name
                 </div>
-                <button className="splash__container__button">
-                    <Link to='/home'>Login as anonymous</Link>
-                </button>
+                <Link to='/home'>
+                    <button className="splash__container__button">
+                        Login as anonymous
+                    </button>
+                </Link>
             </div>
         </div>
     )
