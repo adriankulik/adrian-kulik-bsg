@@ -1,0 +1,150 @@
+// Variables
+$background_color: #000000;
+$card_background_color: white;
+$add_button_color: #64cd94;
+$load_button_color: #727272;
+$categories_divider_color: #8f939f;
+$margin_centered: calc(0.5vw + 0.5vh) 5vw calc(0.5vw + 0.5vh) 5vw;
+
+// Font
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap');
+
+// HTML
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif;
+    background-color: $background_color;
+}
+
+// App
+.splash {
+    position: absolute;
+    top: 0px;
+    z-index: 999;
+    background-color: $background_color;
+    width: 100vw;
+    height: 100%; // 100% displays correctly on chrome mobile. 100vh counts in the address bar.
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__container {
+        color: $load_button_color;
+        width: 80wv;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        &__logo {
+            width: 50%;
+            z-index: 999;
+            font-size: 5rem;
+            animation: rotate 20s infinite linear;
+        }
+
+        &__button {
+            transition: filter 0.3s ease-in-out;
+            width: 40vw;
+            @media (orientation: portrait) {
+                width: 80vw;
+            }
+            font-size: 1rem;
+            @media (orientation: portrait) {
+                font-size: calc(1vw + 1vh);
+            }
+            background-color: $load_button_color;
+            font-weight: bold;
+            border: 10px solid $load_button_color;
+            padding: calc(0.5vh + 0.5vw);
+        }
+
+        &__button > a {
+            text-decoration: none;
+            color: black;
+        }
+
+        &__button:hover {
+            filter: drop-shadow(15px 15px 0px #969696);
+        }
+    }
+}
+
+.notFound {
+    position: absolute;
+    top: 0px;
+    z-index: 999;
+    background-color: $background_color;
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__container {
+        position: absolute;
+        width: 80vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    
+        &__h1 {
+            color: $load_button_color;
+            font-weight: 900;
+            font-size: 12rem;
+            @media (orientation: portrait) {
+                font-size: calc(7vw + 7vh);
+            }
+            margin: 0px;
+            padding: 0px;
+        }
+    
+        &__h2 {
+            color: $load_button_color;
+            font-weight: bold;
+            font-size: 2rem;
+            @media (orientation: portrait) {
+                font-size: calc(1vw + 1vh);
+            }
+            padding-bottom: calc(1vh + 1vw);
+        }
+    
+        &__button {
+            transition: filter 0.3s ease-in-out;
+            width: 15vw;
+            @media (orientation: portrait) {
+                width: 80vw;
+            }
+            font-size: 2rem;
+            @media (orientation: portrait) {
+                font-size: calc(1vw + 1vh);
+            }
+            background-color: $load_button_color;
+            font-weight: bold;
+            border: 10px solid $load_button_color;
+            padding: calc(0.5vh + 0.5vw);
+            color: $load_button_color;
+            color: black;
+        }
+
+        &__button:hover {
+            filter: drop-shadow(15px 15px 0px #969696);
+        }
+
+    }
+
+}
+
+// Animation
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
