@@ -61,7 +61,7 @@ export default class Player extends React.Component {
                     ) : (
                     <div className="player__container" key={this.state.id}>
                         <h2 className="player__title">{this.state.title}</h2>
-                        <ReactPlayer controls={true} width={"100%"} height={"100%"} url={this.state.url} />
+                        <ReactPlayer controls={true} width={"60%"} height={"60%"} url={this.state.url} />
                     </div>
                 )}
                 <Footer />
