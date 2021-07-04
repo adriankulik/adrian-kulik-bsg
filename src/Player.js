@@ -1,7 +1,9 @@
 import './style/style.css';
 import ReactPlayer from 'react-player' // using a player from Pete Cook
 import React from "react";
-import LoadingIcon from './loading.svg'
+import LoadingIcon from './img/loading.svg'
+import Navbar from './Navbar';
+import Footer from './Footer';
 
 export default class Player extends React.Component {
 
@@ -10,7 +12,6 @@ export default class Player extends React.Component {
       token: null, // we don't know our token
       url: null,
       title: null,
-      description: null,
       id: null
     };
   
@@ -43,7 +44,6 @@ export default class Player extends React.Component {
       data = await response.json();
       this.setState({
             url: data.ContentUrl,
-            description: data.Description,
             title: data.Title,
             id: data.MediaId,
             loading: false
@@ -53,6 +53,7 @@ export default class Player extends React.Component {
     render() {
         return (
             <div className="player">
+                <Navbar />
                 {this.state.loading || !this.state.token ? ( // using this as a loading indicator
                     <div className="player__loading">
                         <img className="player__loading__img" src={LoadingIcon} alt="loading icon"></img>
@@ -60,10 +61,10 @@ export default class Player extends React.Component {
                     ) : (
                     <div className="player__container" key={this.state.id}>
                         <h2 className="player__title">{this.state.title}</h2>
-                        <h3 className="player__description">{this.state.description}</h3>
                         <ReactPlayer controls={true} width={"100%"} height={"100%"} url={this.state.url} />
                     </div>
                 )}
+                <Footer />
             </div>
         )
     };

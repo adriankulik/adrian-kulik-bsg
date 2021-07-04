@@ -1,7 +1,9 @@
 import './style/style.css';
 import React from "react";
-import LoadingIcon from './loading.svg';
+import LoadingIcon from './img/loading.svg';
 import { Link } from 'react-router-dom';
+import Navbar from './Navbar';
+import Footer from './Footer';
 
 export default class Home extends React.Component {
 
@@ -51,20 +53,21 @@ export default class Home extends React.Component {
   render() {
     return(
       <div className="home">
+        <Navbar />
         {this.state.loading || !this.state.token ? ( // using this as a loading indicator
           <div className="home__loading">
             <img className="home__loading__img" src={LoadingIcon} alt="loading icon"></img>
           </div>
         ) : (
           <div className="home__container">
+            <h1>Movies availible in your plan</h1>
             {this.state.entities.map(
               function(entity) {
                 return (
-                  <Link to='/player' key={entity.Id}>
+                  <Link to='/player' key={entity.Id} className="home__entity__link">
                     <div className="home__entity">
                       <div className="home__entity__visual">
-                        {/* <img className="home__entity__img" src={} alt="placeholder image"></img> */}
-                        <p className="home__entity__img">Length: {entity.Duration}</p>
+                        <p>Duration: {entity.Duration}</p>
                       </div>
                       <div className="home__entity__text">
                         <h2 className="home__entity__title">{entity.Title}</h2>
@@ -76,6 +79,7 @@ export default class Home extends React.Component {
               })}
           </div>
         )}
+        <Footer />
       </div>
     );
   };

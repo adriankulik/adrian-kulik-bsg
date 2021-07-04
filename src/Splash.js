@@ -7,7 +7,7 @@ function SplashPage() {
         <div className="splash">
             <div className="splash__container">
                 <div className="splash__container__logo">
-                    My streaming service name
+                    My BSG streaming service name
                 </div>
                 <Link to='/home'>
                     <button className="splash__container__button">

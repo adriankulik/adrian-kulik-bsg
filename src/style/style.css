@@ -6,6 +6,67 @@ body {
   background-color: #000000;
 }
 
+.navigation {
+  width: 100%;
+  border-bottom: 5px solid #686868;
+}
+
+.navigation__container {
+  padding: 2%;
+  background-color: #000000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: #ffffff;
+}
+
+.navigation__container__link {
+  text-decoration: none;
+}
+
+.navigation__container__logo {
+  color: #ffffff;
+}
+
+.footer {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #141414;
+  border-top: 5px solid #141414;
+}
+
+.footer__text {
+  font-size: 1rem;
+}
+
+.footer__link {
+  color: #686868;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
 .splash {
   position: absolute;
   top: 0px;
@@ -96,10 +157,63 @@ body {
           filter: drop-shadow(0px 0px 20px white);
 }
 
-.home {
+.player {
   z-index: 999;
   background-color: #000000;
   width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.player__loading {
+  -webkit-animation: rotate 1s infinite ease-in-out;
+          animation: rotate 1s infinite ease-in-out;
+  width: 10vh;
+  height: 10vh;
+}
+
+.player__loading__img {
+  width: 10vh;
+  height: 10vh;
+}
+
+.player__container {
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.player__title {
+  margin: 1%;
+  color: #686868;
+}
+
+.home {
+  z-index: 999;
+  background-color: #000000;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -136,10 +250,10 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -148,13 +262,9 @@ body {
           justify-content: center;
 }
 
-@media (orientation: portrait) {
-  .home__container {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
+.home__container > h1 {
+  color: #686868;
+  padding-bottom: 5%;
 }
 
 .home__entity {
@@ -164,15 +274,28 @@ body {
   border-radius: 1vh;
 }
 
+.home__entity__link {
+  text-decoration: none;
+}
+
 .home__entity__visual {
   height: 18vh;
   width: 32vh;
-  background-color: white;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 5s ease infinite;
+          animation: gradient 5s ease infinite;
+  border-radius: 1vh;
+}
+
+.home__entity__visual > p {
+  padding: 2%;
+  color: white;
+  font-size: 0.6rem;
 }
 
 .home__entity__text {
   color: #686868;
-  text-decoration: none;
 }
 
 .notFound {
