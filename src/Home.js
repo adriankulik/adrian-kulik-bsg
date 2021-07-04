@@ -1,6 +1,6 @@
 import './style/style.css';
 import React from "react";
-import LoadingIcon from './loading.svg'
+import LoadingIcon from './loading.svg';
 import { Link } from 'react-router-dom';
 
 export default class Home extends React.Component {
@@ -46,8 +46,6 @@ export default class Home extends React.Component {
     });
     data = await response.json();
     this.setState({entities: data.Entities, loading: false})
-    console.log(this.state.entities);
-    this.state.entities.forEach(function(x) {console.log(x.Title, x.Description)}) // using forEach() method instead of map(), because I don't want to return any value
   };
 
   render() {
@@ -62,7 +60,7 @@ export default class Home extends React.Component {
             {this.state.entities.map(
               function(entity) {
                 return (
-                  <Link to='/player'>
+                  <Link to='/player' key={entity.Id}>
                     <div className="home__entity">
                       <div className="home__entity__visual">
                         {/* <img className="home__entity__img" src={} alt="placeholder image"></img> */}
