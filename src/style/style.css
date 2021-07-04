@@ -160,7 +160,7 @@ body {
 .player {
   z-index: 999;
   background-color: #000000;
-  width: 100vw;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -189,7 +189,7 @@ body {
 }
 
 .player__container {
-  width: 100vw;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
